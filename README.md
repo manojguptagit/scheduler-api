@@ -149,7 +149,7 @@ erDiagram
 
     job_locks {
         bigint id PK
-        bigint job_id FK UK
+        bigint job_id FK
         varchar lock_holder
         timestamp lock_time
         timestamp expires_at
@@ -193,7 +193,6 @@ erDiagram
         timestamp created_at
     }
 
-    %% Relationships
     users ||--o{ jobs : "creates"
     users ||--o{ schedules : "creates"
     users ||--o{ audit_log : "performs"
